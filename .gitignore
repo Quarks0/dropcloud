@@ -1,0 +1,6 @@
+node_modules/
+bundle.*
+/tmp
+/log/*
+!/log/.keep
+/app/assets/javascripts/bundle*
