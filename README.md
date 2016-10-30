@@ -1,24 +1,24 @@
-# GroundCloud
+# DopCloud
 
 [Heroku link][heroku] **Note:** This should be a link to your production site
 
 [Trello link][trello]
 
-[heroku]: https://groundcloud.herokuapp.com/
-[trello]: https://trello.com/b/HZxZWNIR/groundcloud
+[heroku]: https://dropcloud.herokuapp.com/
+[trello]: https://trello.com/b/HZxZWNIR/dropcloud
 
 ## Minimum Viable Product
 
-GroundCloud is a music based site influenced by SoundCloud built on a Rails/Redux framework. By the end of Week 9, this app will, at a minimum, satisfy the
+DropCloud is a music based site influenced by SoundCloud built on a Rails/Redux framework. By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] Account creation/login (guest included)
-- [ ] Music playback
+- [ ] Song playback
 - [ ] Liked songs/playlists
-- [ ] Music upload
-- [ ] Music controls
+- [ ] Song upload
+- [ ] Song controls
 - [ ] Song look up
 
 ## Design Docs
@@ -40,26 +40,26 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: - User profiles (1 day)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**objective:** User profiles that show basic information (info, song uploads, playlists)
 
-### Phase 3: Notebooks (2 day)
+### Phase 3: User-user interaction (1 day)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**objective:** Users can follow, message each other, and leave messages on songs
 
-### Phase 4: Tags (1 days)
+### Phase 4: Song Model, API, and components (2 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Songs can be played and uploaded through the API, allow basic song controls
 
-### Phase 5: Allow Complex Styling in Notes (1 days, W2 Th 6pm)
+### Phase 5: Playlists and Likes (2 day)
 
-**objective:** Allow rich text editing of notes.
+**Objective:** Users can like and add songs to playlists through the API
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: Song look up (2 days)
 
-**objective:** Add infinite scroll to Notes Index
+**Objective:** Users can search for songs. Optimization for other aspects of Heroku and project explored
+
 
 ### Bonus Features (TBD)
 - [ ] Top charts
