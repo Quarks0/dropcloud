@@ -16,6 +16,7 @@ id          | integer   | not null, primary key
 title       | string    | not null
 artist      | string    | not null
 url         | string    | not null
+image_url   | string    |
 user_id     | integer   | not null, foreign key (references users), indexed
 
 ## likes
