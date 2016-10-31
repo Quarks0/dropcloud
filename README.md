@@ -1,7 +1,7 @@
 ## Design Docs
 * [View Docs][docs]
 
-[docs]: docs/
+[docs]: docs
 
 == README
 
