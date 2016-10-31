@@ -42,11 +42,11 @@ sufficient CSS styling:
 
 ### Phase 2: - User profiles (1 day)
 
-**objective:** User profiles that show basic information (info, song uploads, playlists)
+**Objective:** User profiles that show basic information (info, song uploads, playlists)
 
 ### Phase 3: User-user interaction (1 day)
 
-**objective:** Users can follow, message each other, and leave messages on songs
+**Objective:** Users can follow, message each other, and leave messages on songs
 
 ### Phase 4: Song Model, API, and components (2 days)
 
