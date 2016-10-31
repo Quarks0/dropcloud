@@ -1,37 +1,64 @@
-##**Incomplete**
-
-
 ## Component Hierarchy
 
 **AuthFormContainer**
 - AuthForm
 
 **HomeContainer**
-- Feed
+- Header Navigation
 - Music Player
+- Search
+
+**SongsContainer**
+- Song Index
+	- Song Item
 
 **SongContainer**
--
-	+songindex
+- Song info
+- Comments
 
-**Search**
+**NewSongContainer**
+- Song form
 
-**User**
+**ProfileContainer**
+- UserInfo
+- Song Uploads Index
+- Liked Songs Index
+- Playlists Index
+
+**PlaylistsContainer**
+- Playlist Index
+	-Playlist Item
+
+**PlaylistContainer**
+-Playlist contents
+
+**NewPlaylistContainer**
+- Playlist form
+
+**SearchContainer**
+- User results
+- Track results
+- Playlist results
+
+**AudioContainer**
+- Audio controls
+- Current song info
+
 
 ## Routes
 
 |Path   | Component   |
 |-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
+| "/" | "HomeContainer" |
+| "/signup | "AuthFormContainer" |
+| "/login" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/home/note/:noteId" | "NotesContainer" |
-| "/home/notebook/:notebookId/note/:noteId" | "NotebookContainer" |
-| "/home/tag/:tagId/note/:notedId" | "TagContainer" |
-| "/home/search-results" | "SearchResultsContainer"
-| "/new-note" | "NewNoteContainer" |
-| "/search" | "Search" |
-| "/new-notebook" | "NewNotebook" |
-| "/new-tag" | "NewTag" |
-| "/tag-search" | "TagSearch" |
-| "/notebook-search" | "NotebookSearch" |
+| "/songs" | SongsContainer |
+| "/songs/:track_id" | SongContainer |
+| "/users" | ProfileContainer |
+| "/users/:user_id" | ProfileContainer |
+| "/playlists" | PlaylistsContainer |
+| "/playlists/:playlist_id" | PlaylistContainer |
+| "/searchresults" | SearchContainer |
+| "/newsong" | NewSongContainer |
+| "/newplaylist" | NewPlaylistContainer |
