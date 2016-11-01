@@ -39,11 +39,11 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end Authentication
 
-### Phase 2: - User profiles (1 day)
+### Phase 2: User profiles (1 day)
 
 **Objective:** User profiles that show basic information (info, song uploads)
 
-### Phase 3: User-user interaction (1 day)
+### Phase 3: User interaction (1 day)
 
 **Objective:** Users can comment on songs, navigate pages through API
 
