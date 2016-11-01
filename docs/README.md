@@ -15,11 +15,10 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] Account creation/login (guest included)
-- [ ] Song playback
-- [ ] Liked songs/playlists
-- [ ] Song upload
-- [ ] Song controls
-- [ ] Song look up
+- [ ] Song CRUD
+- [ ] Playing songs with sound controls and continuous play
+- [ ] Comments
+- [ ] User pages
 
 ## Design Docs
 * [View Wireframes][wireframes]
@@ -28,11 +27,11 @@ sufficient CSS styling:
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[api-endpoints]: api-endpoints.md
+[schema]: schema.md
 
 ## Implementation Timeline
 
@@ -42,27 +41,28 @@ sufficient CSS styling:
 
 ### Phase 2: - User profiles (1 day)
 
-**Objective:** User profiles that show basic information (info, song uploads, playlists)
+**Objective:** User profiles that show basic information (info, song uploads)
 
 ### Phase 3: User-user interaction (1 day)
 
-**Objective:** Users can follow, message each other, and leave messages on songs
+**Objective:** Users can comment on songs, navigate pages through API
 
 ### Phase 4: Song Model, API, and components (2 days)
 
-**Objective:** Songs can be played and uploaded through the API, allow basic song controls
+**Objective:** Songs can be played, edited, and uploaded through the API
 
-### Phase 5: Playlists and Likes (2 day)
+### Phase 5: Sound controls and continuous playback (2 day)
 
-**Objective:** Users can like and add songs to playlists through the API
+**Objective:** Users can use an audio player to listen to music quickly and seemlessly
 
-### Phase 6: Song look up (2 days)
+### Phase 6: Optimization and bonus (2 days)
 
-**Objective:** Users can search for songs. Optimization for other aspects of Heroku and project explored
+**Objective:** Bonus features (listed below) Implemented. Optimization for other aspects of Heroku and project explored
 
 
 ### Bonus Features (TBD)
 - [ ] Top charts
-- [ ] User follows
+- [ ] User follows, likes
+- [ ] Playlists
 - [ ] Music suggestions
-- [ ] User messages, comments
+- [ ] User messages
