@@ -7,15 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #-----------------USERS---------------
-ben = User.find_or_create_by([{username: "Quarks0", password: "2malfor9", email:"bdippelsman10@gmail.com")
-tonia = User.find_or_create_by([{username: "toniahsia", password: "ilovecats", email:"catluver94@cats.com")
-michael = User.find_or_create_by([{username: "toopak", password: "pakout", email:"mpak@smentertainment.com")
-connor = User.find_or_create_by([{username: "monnorcurphy", password: "therealOG", email:"connor@murphy.com")
-cindy = User.find_or_create_by([{username: "illestoftheill", password: "nmjcu", email:"cindy@wang.com")
-shaurya = User.find_or_create_by([{username: "IAMGOD", password: "IAMBOD", email:"god@god.com")
-guest = User.find_or_create_by([{username: "Guest", password: "password", email:"guest@example.com")
-will = User.find_or_create_by([{username: "weeum", password: "password", email:"will@dippelsman.com")
-nick = User.find_or_create_by([{username: "minus", password: "password", email:"will@dippelsman.com")
+guest = User.create({username: "Guest", password: "password", email:"guest@example.com"})
+ben = User.create({username: "Quarks0", password: "2malfor9", email:"Bdippelsman10@gmail.com"})
+tonia = User.create({username: "Toniahsia", password: "ilovecats", email:"Catluver94@cats.com"})
+michael = User.create({username: "Toopak", password: "pakout", email:"Mpak@smentertainment.com"})
+connor = User.create({username: "Monnorcurphy", password: "therealOG", email:"Connor@murphy.com"})
+cindy = User.create({username: "Illestoftheill", password: "nmjcu", email:"cindy@wang.com"})
+shaurya = User.create({username: "Iamgod", password: "IAMGOD", email:"god@god.com"})
+humza = User.create({username: "Houstonballer", password: "houstonrepresent", email: "humza@baig.com"})
+will = User.create({username: "Weeum", password: "password", email:"will@dippelsman.com"})
+nick = User.create({username: "Minus", password: "password", email:"will@dippelsman.com"})
 
 
   # olaf = Contact.find_or_create_by(name: "Olaf", email: "olaf@frozen.com", user_id: anna.id)

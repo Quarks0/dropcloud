@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
 
-import FiltersReducer from './filters_reducer';
+import FiltersReducer from './filter_reducer';
 import SessionReducer from './session_reducer';
 
 const RootReducer = combineReducers({
