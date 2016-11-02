@@ -11,10 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161101173837) do
+ActiveRecord::Schema.define(version: 20161101235735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "song_id",    null: false
+    t.integer  "parent_id"
+    t.text     "body",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["user_id", "song_id", "parent_id"], name: "index_comments_on_user_id_and_song_id_and_parent_id", using: :btree
+
+  create_table "playlist_contents", force: :cascade do |t|
+    t.integer "playlist_id", null: false
+    t.integer "song_id",     null: false
+  end
+
+  add_index "playlist_contents", ["playlist_id", "song_id"], name: "index_playlist_contents_on_playlist_id_and_song_id", using: :btree
+
+  create_table "playlists", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string  "name",    null: false
+  end
+
+  add_index "playlists", ["user_id"], name: "index_playlists_on_user_id", unique: true, using: :btree
+
+  create_table "songs", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.string   "artist",     null: false
+    t.string   "url",        null: false
+    t.string   "image_url"
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "songs", ["user_id"], name: "index_songs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false

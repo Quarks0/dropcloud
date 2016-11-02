@@ -8,7 +8,7 @@
 
 #-----------------USERS---------------
 ben = User.find_or_create_by([{username: "Quarks0", password: "2malfor9", email:"bdippelsman10@gmail.com")
-tonia = User.find_or_create_by([{username: "toniahsia", password: "ilovecats", email:"catluver@cats.com")
+tonia = User.find_or_create_by([{username: "toniahsia", password: "ilovecats", email:"catluver94@cats.com")
 michael = User.find_or_create_by([{username: "toopak", password: "pakout", email:"mpak@smentertainment.com")
 connor = User.find_or_create_by([{username: "monnorcurphy", password: "therealOG", email:"connor@murphy.com")
 cindy = User.find_or_create_by([{username: "illestoftheill", password: "nmjcu", email:"cindy@wang.com")
