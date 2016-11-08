@@ -13,8 +13,8 @@ DropCloud is a music based site influenced by SoundCloud built on a Rails/Redux 
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
-- [ ] Hosting on Heroku
-- [ ] Account creation/login (guest included)
+- [x] Hosting on Heroku
+- [x] Account creation/login (guest included)
 - [ ] Song CRUD
 - [ ] Playing songs with sound controls and continuous play
 - [ ] Comments
@@ -35,29 +35,18 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Tuesday - Song CRUD (partial)
 
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:** Set up song CRUD (backend, start frontend)
 
-### Phase 2: User profiles (1 day)
+### Phase 2: Wednesday - Song CRUD (completed), playback
+**Objective:** Finish song crud, setting up react player
 
-**Objective:** User profiles that show basic information (info, song uploads)
+### Phase 3: Thursday - User profiles
+**Objective:** Set up user pages
 
-### Phase 3: User interaction (1 day)
-
-**Objective:** Users can comment on songs, navigate pages through API
-
-### Phase 4: Song Model, API, and components (2 days)
-
-**Objective:** Songs can be played, edited, and uploaded through the API
-
-### Phase 5: Sound controls and continuous playback (2 day)
-
-**Objective:** Users can use an audio player to listen to music quickly and seemlessly
-
-### Phase 6: Optimization and bonus (2 days)
-
-**Objective:** Bonus features (listed below) Implemented. Optimization for other aspects of Heroku and project explored
+### Phase 4: Friday - Comments
+**Objective:** Set up comments for songs
 
 
 ### Bonus Features (TBD)
