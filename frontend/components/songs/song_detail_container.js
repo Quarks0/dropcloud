@@ -3,8 +3,8 @@ import { createSong, updateSong, deleteSong, fetchSong } from '../../actions/son
 import SongDetail from './song_detail';
 
 
-const mapStateToProps = (state) => ({
-  songs: state.songs
+const mapStateToProps = (state, ownProps) => ({
+  song: ownProps.song
 });
 
 const mapDispatchToProps = (dispatch) => {

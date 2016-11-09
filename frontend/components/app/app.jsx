@@ -34,6 +34,10 @@ closeModal(){
     this.props.requestAllSongs();
   }
 
+  goToProfile(){
+    this.props.router.push('/home/profile')
+  }
+
   render() {
   let username = this.props.currentUser ? this.props.currentUser.username : "";
   return (
@@ -42,7 +46,7 @@ closeModal(){
           <Link to="/home" className="header-link"><img src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
             <button onClick={this.openModal.bind(this)}>Upload</button>
-            <button><img className="profile-pic" src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg"/>
+            <button onClick={this.goToProfile.bind(this)}><img className="profile-pic" src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg"/>
             {username}</button>
             <button onClick={this.props.logout}>Log out</button>
           </nav>

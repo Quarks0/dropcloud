@@ -4,7 +4,6 @@ import SongIndex from './song_index';
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return({
   songs: state.songs
 });};

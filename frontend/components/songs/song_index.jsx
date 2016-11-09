@@ -7,9 +7,9 @@ class SongIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props.songs);
     return (
       <div className="song-index">
+        <h3>Song Index</h3>
         <ul>
           {this.props.songs.map((song, i) => (
             <li key={i}><SongItemContainer song={song}/></li>

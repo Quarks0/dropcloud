@@ -6,10 +6,14 @@ class SongDetail extends React.Component{
 
   }
 
+  componentWillMount(){
+    this.props.fetchSong(1);
+  }
+
   render (){
 
     return(
-
+      <div>placeholder</div>
     );
   }
 }

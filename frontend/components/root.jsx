@@ -7,6 +7,7 @@ import App from './app/app_container';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongIndexContainer from './songs/song_index_container';
+import SongDetailContainer from './songs/song_detail_container';
 import {requestAllSongs, requestSong} from '../actions/song_actions'
 
 const Root = ({ store }) => {
