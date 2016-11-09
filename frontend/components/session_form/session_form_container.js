@@ -12,8 +12,7 @@ const mapDispatchToProps = (dispatch) => {
 
   return {
     login: user => dispatch(login(user)),
-    signup: user => dispatch(signup(user)),
-    formType
+    signup: user => dispatch(signup(user))
   };
 };
 

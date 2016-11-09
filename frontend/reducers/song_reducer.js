@@ -1,9 +1,9 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_SONG } from '../actions/song_actions';
 import merge from 'lodash/merge';
 
-const _nullSongs = Object.freeze({
+const _nullSongs = {
   songs: null
-});
+};
 
 const SessionReducer = (state = _nullSongs, action) => {
   Object.freeze(state)

@@ -12,7 +12,6 @@ class SessionForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
-    this.altForm = this.altForm.bind(this);
 		this.emailInput = this.emailInput.bind(this);
 		this.clearFields = this.clearFields.bind(this);
 
@@ -29,10 +28,6 @@ class SessionForm extends React.Component {
 		if (this.props.loggedIn) {
 			this.props.router.push("/home");
 		}
-	}
-
-	altForm(){
-
 	}
 
 	clearFields(){
@@ -68,8 +63,8 @@ class SessionForm extends React.Component {
 			document.getElementById('username').focus();
 			let currLength = this.state.username.length;
 
-			if(currLength < demoGuest.length){
-				this.setState({username: this.state.username + demoGuest.slice(currLength, currLength + 1)});
+			if(currLength < demoUser.length){
+				this.setState({username: this.state.username + demoUser.slice(currLength, currLength + 1)});
 			} else{
 				clearInterval(usernameID);
 				this.startPasswordAnimation();
@@ -95,29 +90,19 @@ class SessionForm extends React.Component {
 
 
 	update(field) {
-		return e => this.setState({
-			[field]: e.currentTarget.value
-		});
-	}
-
-	renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+		return e => this.setState({[field]: e.currentTarget.value});
 	}
 
 	render() {
+		const errors = this.props.errors.map((error, i) =>(
+			<li key={i} className="form-error">{error}</li>
+		));
+
 		return (
 			<div className="session-form-container">
 				<form onSubmit={this.handleSubmit} className="session-form">
 
-					{this.renderErrors()}
+					<ul>{errors}</ul>
 					<div className="login-form">
 						<br/>
 						<label> Username:
@@ -144,7 +129,6 @@ class SessionForm extends React.Component {
                 onClick={this.startUsernameAnimation.bind(this)}
                 >Demo Account</a>
 					</div>
-					{this.altForm()}
 				</form>
 			</div>
 		);
