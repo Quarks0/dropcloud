@@ -3,9 +3,12 @@ import { fetchAllSongs } from '../../actions/song_actions';
 import SongIndex from './song_index';
 
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+  console.log(state);
+  return
+  {
   songs: state.songs
-});
+};};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -13,7 +16,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SongIndex);
+export default connect(mapStateToProps,mapDispatchToProps)(SongIndex);

@@ -15,7 +15,7 @@
  	padding: 0;
  	border: 0;
  	font-size: 100%;
- 	font: Roboto, sans-serif;
+ 	font-family: Roboto, sans-serif;
  	vertical-align: baseline;
  }
  /* HTML5 display-role reset for older browsers */
@@ -33,6 +33,10 @@
  }
  blockquote, q {
  	quotes: none;
+ }
+ button{
+   -webkit-appearance: none;
+   outline: none;
  }
  blockquote:before, blockquote:after,
  q:before, q:after {
@@ -64,6 +68,7 @@
    text-decoration: none;
    display: inline-block;
    padding: 10px;
+   font-family: Roboto, sans-serif;
  }
 
  .header-link{
@@ -86,12 +91,50 @@
  }
 
  .nav-bar button{
-   color: white;
+   color: #d9d7d6;
    display: inline-block;
    padding: 5px;
    background-color: black;
    cursor: pointer;
  }
+
+.overview{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-image: url("https://res.cloudinary.com/duhmzsirt/image/upload/v1478677565/3624953-dj-set-wallpaper_brlrr0.jpg");
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+  max-height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.overview h1{
+  color: #d9d7d6;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.overview-body{
+  color:#d9d7d6;
+  font-size: 24px;
+  display: inline-block;
+}
+
+.overview button{
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #bc78ff;
+}
+
+.overview button:active{
+  background-color: #ad42ff;
+}
 
 .profile-pic{
   width: 15px;

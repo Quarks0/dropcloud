@@ -5,7 +5,7 @@ const _nullSongs = {
   songs: null
 };
 
-const SessionReducer = (state = _nullSongs, action) => {
+const SongReducer = (state = _nullSongs, action) => {
   Object.freeze(state)
   let newState = merge({}, state)
   switch(action.type) {
@@ -18,4 +18,4 @@ const SessionReducer = (state = _nullSongs, action) => {
   }
 };
 
-export default SessionReducer;
+export default SongReducer;

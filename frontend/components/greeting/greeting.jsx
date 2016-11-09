@@ -42,9 +42,12 @@ class Greeting extends React.Component{
         </header>
         <main className="overview">
           <h1>This is DropCloud</h1>
+          <br/>
           <p className="overview-body">
             A collection of songs with only the heaviest of drops
           </p>
+          <br/>
+          <button onClick={this.openModal.bind(this,"login", true)}>Check it out</button>
         </main>
         <Modal isOpen={this.state.loginModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>

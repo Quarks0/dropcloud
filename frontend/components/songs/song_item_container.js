@@ -3,11 +3,11 @@ import { fetchSong, deleteSong } from '../../actions/song_actions';
 import SongItem from './song_item';
 
 
-const mapStateToProps = (state) => ({
-  songs: state.songs
+const mapStateToProps = (state, ownProps) => ({
+  song: ownProps.song
 });
 
-const mapDispatchToProps = (dispatch) =>
+const mapDispatchToProps = (dispatch) =>{
 
   return {
     fetchSong: (id) => dispatch(fetchSong(id)),
@@ -16,7 +16,4 @@ const mapDispatchToProps = (dispatch) =>
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SongItem);
+export default connect(mapStateToProps,mapDispatchToProps)(SongItem);

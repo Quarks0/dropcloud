@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import SongIndex from '../songs/song_index';
+import SongIndexContainer from '../songs/song_index_container';
+import PlayerContainer from '../player/player_container';
 
 class App extends React.Component{
   constructor(props){
@@ -25,7 +26,7 @@ class App extends React.Component{
             <button onClick={this.props.logout}>Log out</button>
           </nav>
         </header>
-
+        <SongIndexContainer />
       </div>
   );
   }
