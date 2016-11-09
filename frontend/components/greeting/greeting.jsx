@@ -34,7 +34,7 @@ class Greeting extends React.Component{
     return(
       <div>
         <header className="greeting-header">
-          <Link to="/home" className="header-link"><img src="http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
+          <Link to="/home" className="header-link"><img src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
             <button onClick={this.openModal.bind(this,"login", false)}>Log In</button>
             <button onClick={this.openModal.bind(this,"signup", false)}>Sign Up</button>

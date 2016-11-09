@@ -98,8 +98,11 @@ class SessionForm extends React.Component {
 			<li key={i} className="form-error">{error}</li>
 		));
 
+		const type = this.props.formType === "login" ? "Log in" : "Sign up";
+
 		return (
 			<div className="session-form-container">
+				<h4>{type}</h4>
 				<form onSubmit={this.handleSubmit} className="session-form">
 
 					<ul>{errors}</ul>
@@ -120,15 +123,16 @@ class SessionForm extends React.Component {
 								onChange={this.update("password")}
 								className="login-input" />
 						</label>
+						<br/>
 						{this.emailInput()}
 						<br/>
 						<input type="submit" value="Submit" />
-						<button
-                className='form-button'
-                onClick={this.startUsernameAnimation.bind(this)}
-                >Demo Account</button>
+						<br/>
 					</div>
 				</form>
+				<button className='form-button'
+					onClick={this.startUsernameAnimation.bind(this)}
+					>Demo Account</button>
 			</div>
 		);
 	}

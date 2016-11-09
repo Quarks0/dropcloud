@@ -7,11 +7,17 @@ class SongIndex extends React.Component{
 
   }
 
-  // render(){
-  //   return (
-  //
-  //   );
-  // }
+  render(){
+    return (
+      <div className="song-index">
+        <ul>
+          {this.props.songs.map((song, i) => (
+            <li key={i}><SongItemContainer song={song}/></li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 }
 
 export default SongIndex;

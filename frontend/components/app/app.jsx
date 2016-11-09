@@ -7,33 +7,25 @@ class App extends React.Component{
     super(props);
   }
 
-  openModal(){
-
+  componentWillReceiveProps(nextProps){
+    if(!nextProps.currentUser){
+      this.props.router.push('/');
+    }
   }
-
-  closeModal(){
-
-  }
-
-  handleSubmit(){
-
-  }
-
-  //Need way to toggle nav bar
-  // profile img url http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg
 
   render() {
-
+  let username = this.props.currentUser ? this.props.currentUser.username : "";
   return (
       <div>
         <header>
-          <Link to="/home" className="header-link"><img src="http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
+          <Link to="/home" className="header-link"><img src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
-            <button onClick={this.openModal.bind(this,"login", false)}>Log In</button>
-            <button onClick={this.openModal.bind(this,"signup", false)}>Sign Up</button>
+            <button><img className="profile-pic" src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg"/>
+            {username}</button>
+            <button onClick={this.props.logout}>Log out</button>
           </nav>
         </header>
-        <SongIndex />
+
       </div>
   );
   }
