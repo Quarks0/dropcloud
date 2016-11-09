@@ -1,5 +1,3 @@
-import { receiveCurrentUser, receiveErrors } from '../actions/session_actions';
-
 export const login = (user, success, error) => {
 	$.ajax({
 		method: 'POST',
@@ -20,13 +18,11 @@ export const signup = (user, success, error) => {
 	});
 };
 
-export const logout = success => {
+export const logout = (success,error) => {
 	$.ajax({
 		method: 'delete',
 		url: '/api/sessions',
 		success,
-		error: () => {
-		  console.log("Logout error in SessionApiUtil#logout");
-		}
+		error
 	});
 };

@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 
-import FiltersReducer from './filter_reducer';
 import SessionReducer from './session_reducer';
+import SongReducer from './song_reducer';
 
 const RootReducer = combineReducers({
-  filters: FiltersReducer,
-  session: SessionReducer
+  session: SessionReducer,
+  songs: SongReducer
 });
 
 export default RootReducer;

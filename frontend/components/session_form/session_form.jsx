@@ -9,9 +9,10 @@ class SessionForm extends React.Component {
 			password: "",
 			email: ""
 		};
+
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.update = this.update.bind(this);
-    // this.getAltText = this.getAltText.bind(this);
+    this.altForm = this.altForm.bind(this);
 		this.emailInput = this.emailInput.bind(this);
 		this.clearFields = this.clearFields.bind(this);
 
@@ -26,12 +27,16 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			this.props.router.push("/home");
 		}
 	}
 
+	altForm(){
+
+	}
+
 	clearFields(){
-	 this.setState({username: '', password:''});
+	 this.setState({username: '', password:'', email:''});
  	}
 
 	emailInput() {
@@ -53,20 +58,12 @@ class SessionForm extends React.Component {
 		this.props.formType === "login" ? this.props.login({user}) : this.props.signup({user});
 	}
 
-	navLink() {
-		if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
-		} else {
-			return <Link to="/login">log in instead</Link>;
-		}
-	}
-
 	startUsernameAnimation(){
 		if(this.state.username.length > 0 || this.state.password.length > 0){
 			this.clearFields();
 		}
 
-		const demoGuest = 'Guest';
+		const demoUser = 'Guest';
 		let usernameID = setInterval(() => {
 			document.getElementById('username').focus();
 			let currLength = this.state.username.length;
@@ -117,12 +114,9 @@ class SessionForm extends React.Component {
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
+			<div className="session-form-container">
+				<form onSubmit={this.handleSubmit} className="session-form">
 
-
-					<br/>
-					Please {this.props.formType} or {this.navLink()}
 					{this.renderErrors()}
 					<div className="login-form">
 						<br/>
@@ -150,6 +144,7 @@ class SessionForm extends React.Component {
                 onClick={this.startUsernameAnimation.bind(this)}
                 >Demo Account</a>
 					</div>
+					{this.altForm()}
 				</form>
 			</div>
 		);

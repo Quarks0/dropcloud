@@ -8,8 +8,7 @@ const mapStateToProps = ({ session }) => ({
   errors: session.errors
 });
 
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
+const mapDispatchToProps = (dispatch) => {
 
   return {
     login: user => dispatch(login(user)),
