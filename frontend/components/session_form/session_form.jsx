@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
 	emailInput() {
 		if (this.props.formType === "signup") {
 			return (
-				<label> Email:
+				<label> Email  
 					<input type="text"
 						value={this.state.email}
 						onChange={this.update("email")}
@@ -108,7 +108,7 @@ class SessionForm extends React.Component {
 					<ul>{errors}</ul>
 					<div className="login-form">
 						<br/>
-						<label> Username:
+						<label> Username
 							<input type="text"
 								id="username"
 								value={this.state.username}
@@ -116,7 +116,7 @@ class SessionForm extends React.Component {
 								className="login-input" />
 						</label>
 						<br/>
-						<label> Password:
+						<label> Password
 							<input type="password"
 								id="password"
 								value={this.state.password}

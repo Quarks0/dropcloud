@@ -7,6 +7,7 @@ import App from './app/app_container';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongIndexContainer from './songs/song_index_container';
+import {requestAllSongs, requestSong} from '../actions/song_actions'
 
 const Root = ({ store }) => {
 
@@ -22,7 +23,15 @@ const Root = ({ store }) => {
     if (currentUser) {
       replace('/home');
     }
-  }
+  };
+
+  const _requestAllSongs = () => {
+    store.dispatch(requestAllSongs());
+  };
+
+  const _requestSong = (nextState) => {
+    store.dispatch(requestSong(nextState.params.songId));
+  };
 
   return (
     <Provider store={store}>
@@ -32,7 +41,8 @@ const Root = ({ store }) => {
           <Route path="/signup" component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
         </Route>
         <Route path="/home" component={App} onEnter={_ensureLoggedIn}>
-          <Route path="/home/songs" component={SongIndexContainer}/>
+          <IndexRoute component={SongIndexContainer} onEnter={_requestAllSongs}/>
+          <Route path="songs/:songId" component={SongDetailContainer} onEnter={_requestSong} />
         </Route>
       </Router>
     </Provider>

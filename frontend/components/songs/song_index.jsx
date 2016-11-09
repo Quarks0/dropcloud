@@ -6,12 +6,8 @@ class SongIndex extends React.Component{
     super(props);
   }
 
-  componentDidMount(){
-    this.props.fetchAllSongs();
-  }
-
   render(){
-    console.log(this.props);
+    console.log(this.props.songs);
     return (
       <div className="song-index">
         <ul>

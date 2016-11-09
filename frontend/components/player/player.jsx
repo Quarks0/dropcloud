@@ -7,7 +7,7 @@ class Player extends React.Component{
   }
 
   render(){
-
+    <ReactPlayer />
   }
 }
 

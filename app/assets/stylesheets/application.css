@@ -15,7 +15,7 @@
  	padding: 0;
  	border: 0;
  	font-size: 100%;
- 	font-family: Roboto, sans-serif;
+ 	font-family: 'Roboto', sans-serif;
  	vertical-align: baseline;
  }
  /* HTML5 display-role reset for older browsers */
@@ -37,7 +37,14 @@
  button{
    -webkit-appearance: none;
    outline: none;
+   -moz-appearance: none;
+   cursor: pointer;
  }
+ .group:after {
+ content: "";
+ display: block;
+ clear: both;
+}
  blockquote:before, blockquote:after,
  q:before, q:after {
  	content: '';
@@ -47,6 +54,9 @@
  	border-collapse: collapse;
  	border-spacing: 0;
  }
+ ::-webkit-scrollbar {
+    display: none;
+}
 
  header {
      display: flex;
@@ -132,7 +142,7 @@
   background-color: #bc78ff;
 }
 
-.overview button:active{
+.overview button:hover{
   background-color: #ad42ff;
 }
 
@@ -140,7 +150,45 @@
   width: 15px;
   height: 15px;
 }
- .song-li {
-   border: 5px solid black;
+
+.session-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.session-form-container h4{
+  padding: 20px;
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input{
+  display: block;
+  height: 20px;
+  box-sizing: border-box;
+}
+
+.form-button{
+  display: inline-block;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #bc78ff;
+}
+
+.form-button:hover{
+  background-color: #ad42ff;
+}
+ .song-item {
+   border: 1px solid black;
    border-radius: 5px;
+ }
+ .song-item img{
+
  }

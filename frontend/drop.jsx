@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+//Testing
+
+import { fetchAllSongs } from './actions/song_actions';
+window.fetchAllSongs = fetchAllSongs;
+//Testing
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
