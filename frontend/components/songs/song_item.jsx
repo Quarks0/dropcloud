@@ -9,12 +9,10 @@ class SongItem extends React.Component{
 
   render(){
     const imageURL = this.props.song.image_url ? this.props.song.image_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png";
-    // const handleClick = url => e => this.props.router.push(url);
-
-    //onClick={handleClick(`/songs/${this.props.song.id}`)}
+    const handleClick = url => e => this.props.router.push(url);
 
     return (
-    <div className="song-item" >
+    <div className="song-item" onClick={handleClick(`/home/songs/${this.props.song.id}`)}>
       <img src={imageURL}/>
       <span className="song-item-text">
         {this.props.song.title} - {this.props.song.artist}

@@ -31,6 +31,7 @@ const Root = ({ store }) => {
   };
 
   const _requestSong = (nextState) => {
+    console.log(nextState);
     store.dispatch(requestSong(nextState.params.songId));
   };
 

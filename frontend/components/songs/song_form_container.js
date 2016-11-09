@@ -8,11 +8,10 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => {
+  console.log("Inside song form container");
   return {
-    fetchAllSongs: () => dispatch(fetchAllSongs()),
     createSong: (song) => dispatch(createSong(song)),
-    updateSong: (song) => dispatch(updateSong(song)),
-    deleteSong: (id) => dispatch(deleteSong(id))
+    updateSong: (song) => dispatch(updateSong(song))
   };
 };
 

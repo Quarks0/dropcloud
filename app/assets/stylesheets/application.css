@@ -149,6 +149,7 @@
 .profile-pic{
   width: 15px;
   height: 15px;
+  padding-right: 5px;
 }
 
 .session-form-container {

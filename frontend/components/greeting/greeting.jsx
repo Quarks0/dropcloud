@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+
 import Modal from 'react-modal';
 import {loginModalStyle} from '../../util/modal_styles';
 import SessionFormContainer from '../session_form/session_form_container';
@@ -21,9 +22,9 @@ class Greeting extends React.Component{
     }
   }
 
-  openModal(type, demo){
+  openModal(type){
     this.props.clearErrors();
-    this.setState({loginModal: true, formType: type, demo: demo});
+    this.setState({loginModal: true, formType: type});
   }
 
   closeModal(){
@@ -53,31 +54,12 @@ class Greeting extends React.Component{
           style={loginModalStyle}>
 
           <SessionFormContainer formType={this.state.formType} closeModal={this.closeModal}
-            demo={this.state.demo} clearErrors={this.props.clearErrors}/>
+            clearErrors={this.props.clearErrors}/>
 
         </Modal>
       </div>
     );
   }
 }
-
-// const sessionLinks = () => (
-//   <nav className="login-signup">
-//     <Link to="/login" activeClassName="current">Login</Link>
-//     &nbsp;or&nbsp;
-//     <Link to="/signup" activeClassName="current">Sign up!</Link>
-//   </nav>
-// );
-//
-// const personalGreeting = (currentUser, logout) => (
-// 	<hgroup className="header-group">
-//     <h2 className="header-name">Hi, {currentUser.username}!</h2>
-//     <button className="header-button" onClick={logout}>Log Out</button>
-// 	</hgroup>
-// );
-//
-// const Greeting = ({ currentUser, logout }) => (
-//   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-// );
 
 export default Greeting;
