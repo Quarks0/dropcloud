@@ -123,11 +123,10 @@ class SessionForm extends React.Component {
 						{this.emailInput()}
 						<br/>
 						<input type="submit" value="Submit" />
-						<a
+						<button
                 className='form-button'
-                id="demo-form-btn"
                 onClick={this.startUsernameAnimation.bind(this)}
-                >Demo Account</a>
+                >Demo Account</button>
 					</div>
 				</form>
 			</div>

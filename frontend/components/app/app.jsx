@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SongIndex from '../songs/song_index';
 
 class App extends React.Component{
   constructor(props){
@@ -26,15 +27,13 @@ class App extends React.Component{
   return (
       <div>
         <header>
-          <Link to="/home" className="header-link"><img src="http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" id="logo"/><h1>DropCloud</h1></Link>
+          <Link to="/home" className="header-link"><img src="http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
-            <ul id="">
-              <li id="nav-sign-in">Log in</li>
-              <li id="nav-sign-up">Sign up</li>
-            </ul>
+            <button onClick={this.openModal.bind(this,"login", false)}>Log In</button>
+            <button onClick={this.openModal.bind(this,"signup", false)}>Sign Up</button>
           </nav>
         </header>
-        {children}
+        <SongIndex />
       </div>
   );
   }

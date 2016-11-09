@@ -29,11 +29,11 @@ class Greeting extends React.Component{
   closeModal(){
     this.setState({loginModal: false, formType: ""});
   }
-  
+
   render () {
     return(
       <div>
-        <header>
+        <header className="greeting-header">
           <Link to="/home" className="header-link"><img src="http://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
             <button onClick={this.openModal.bind(this,"login", false)}>Log In</button>
@@ -43,7 +43,7 @@ class Greeting extends React.Component{
         <main className="overview">
           <h1>This is DropCloud</h1>
           <p className="overview-body">
-            A website dedicated to EDM songs with only the heaviest of drops
+            A collection of songs with only the heaviest of drops
           </p>
         </main>
         <Modal isOpen={this.state.loginModal} onRequestClose={this.closeModal.bind(this)}
