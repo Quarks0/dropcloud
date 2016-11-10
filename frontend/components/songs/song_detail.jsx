@@ -10,6 +10,8 @@ class SongDetail extends React.Component{
     super(props);
 
     this.state={songModal: false, formType: ""};
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   openModal(type){
@@ -21,7 +23,12 @@ class SongDetail extends React.Component{
   }
 
   componentWillMount(){
-    this.props.requestAllSongs();
+    this.props.requestSong(this.props.params.songId);
+  }
+
+  handleDelete(){
+    this.props.deleteSong(this.props.song.id);
+    this.props.router.push('/home');
   }
 
   render (){
@@ -34,7 +41,7 @@ class SongDetail extends React.Component{
         <span className="song-detail-text">Artist: {this.props.song.artist}</span>
         <span className="song-detail-text">Uploaded by: {this.props.song.user.username}</span>
         <button className="song-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
-        <button className="song-detail-delete" onClick={this.props.deleteSong(this.props.song.id)}>Delete</button>
+        <button className="song-detail-delete" onClick={this.handleDelete}>Delete</button>
 
         <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>

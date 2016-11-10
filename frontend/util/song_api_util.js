@@ -27,10 +27,9 @@ export const createSong = (song,success,error) => {
 };
 
 export const updateSong = (song,success,error) => {
-	console.log(song);
 	$.ajax({
 		method: 'patch',
-		url: `/api/songs/${song.song.id}`,
+		url: `/api/songs/${song.id}`,
     data: song,
 		success,
 		error
@@ -38,6 +37,7 @@ export const updateSong = (song,success,error) => {
 };
 
 export const deleteSong = (id,success,error) => {
+	console.log(id);
 	$.ajax({
 		method: 'delete',
 		url: `/api/songs/${id}`,
