@@ -8,7 +8,12 @@ import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongIndexContainer from './songs/song_index_container';
 import SongDetailContainer from './songs/song_detail_container';
-import {requestAllSongs, requestSong} from '../actions/song_actions'
+import UserIndexContainer from './users/user_index_container';
+import UserDetailContainer from './users/user_detail_container';
+
+import {requestAllSongs, requestSong} from '../actions/song_actions';
+import {requestAllUsers, requestUser} from '../actions/user_actions';
+
 
 const Root = ({ store }) => {
 
@@ -31,8 +36,19 @@ const Root = ({ store }) => {
   };
 
   const _requestSong = (nextState) => {
-    console.log(nextState);
     store.dispatch(requestSong(nextState.params.songId));
+  };
+
+  const _requestProfile = () => {
+    store.dispatch(requestUser(store.getState().session.currentUser.id));
+  };
+
+  const _requestAllUsers = () => {
+    store.dispatch(requestAllUsers());
+  };
+
+  const _requestUser = (nextState) => {
+    store.dispatch(requestUser(nextState.params.userId));
   };
 
   return (
@@ -45,12 +61,13 @@ const Root = ({ store }) => {
         <Route path="/home" component={App} onEnter={_ensureLoggedIn}>
           <IndexRoute component={SongIndexContainer} onEnter={_requestAllSongs}/>
           <Route path="songs/:songId" component={SongDetailContainer} onEnter={_requestSong} />
+          <Route path="profile" component={UserDetailContainer} onEnter={_requestProfile}/>
+          <Route path="users" component={UserIndexContainer} onEnter={_requestAllUsers} />
+          <Route path="users/:userId" component={UserDetailContainer} onEnter={_requestUser} />
         </Route>
       </Router>
     </Provider>
   );
 };
-// <Route path="/home/users" component={UsersIndexContainer} />
-// <Route path="/home/playlists" component={PlaylistIndexContainer} />
 
 export default Root;

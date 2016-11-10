@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: https://dropcloud.herokuapp.com/
+[heroku]: https://thisisdropcloud.herokuapp.com/
 [trello]: https://trello.com/b/HZxZWNIR/dropcloud
 
 ## Minimum Viable Product
@@ -15,7 +15,7 @@ sufficient CSS styling:
 
 - [x] Hosting on Heroku
 - [x] Account creation/login (guest included)
-- [ ] Song CRUD
+- [X] Song CRUD
 - [ ] Playing songs with sound controls and continuous play
 - [ ] Comments
 - [ ] User pages

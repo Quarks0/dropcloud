@@ -3,9 +3,9 @@ import Player from './player';
 import {playSong, pauseSong} from '../../actions/song_actions';
 
 
-const mapStateToProps = ({currentSong}) => ({
-  song: currentSong.song,
-  playing: currentSong.playing
+const mapStateToProps = (state) => ({
+  song: state.playback.song,
+  play: state.playback.play
 });
 
 const mapDispatchToProps = (dispatch) => ({

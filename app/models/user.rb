@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_unique
 
+  has_many :comments
+  has_many :songs
+
   def generate_token
     SecureRandom.urlsafe_base64(16)
   end

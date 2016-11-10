@@ -68,7 +68,7 @@ closeModal(){
           {this.props.children}
         </main>
 
-        <footer>player placeholder</footer>
+        <footer><PlayerContainer /></footer>
       </div>
   );
   }

@@ -12,6 +12,7 @@ class SongDetail extends React.Component{
     this.state={songModal: false, formType: ""};
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.togglePlay = this.togglePlay.bind(this)
   }
 
   openModal(type){
@@ -31,12 +32,16 @@ class SongDetail extends React.Component{
     this.props.router.push('/home');
   }
 
+  togglePlay(){
+
+  }
+
   render (){
     console.log(this.props);
     const imageURL = this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url;
     return(
       <section className="song-detail">
-        <img src={imageURL} />
+        <img src={imageURL} onClick={this.togglePlay}/>
         <span className="song-detail-text">Title: {this.props.song.title}</span>
         <span className="song-detail-text">Artist: {this.props.song.artist}</span>
         <span className="song-detail-text">Uploaded by: {this.props.song.user.username}</span>
