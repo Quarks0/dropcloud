@@ -18,7 +18,7 @@ export default ({dispatch}) => next => action => {
       createSong(action.song, fetchSongSuccess)
       return next(action);
     case DELETE_SONG:
-      deleteSong(action.id, deleteSongSuccess)
+      deleteSong(action.song.id, deleteSongSuccess)
       return next(action);
     case UPDATE_SONG:
       updateSong(action.song, fetchSongSuccess)
