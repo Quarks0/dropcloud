@@ -18,14 +18,14 @@ class App extends React.Component{
     this.state = {songModal: false, formType: ""};
   }
 
+  openModal(type){
+    this.props.clearSongErrors();
+    this.setState({uploadModal: true, formType: type});
+  }
 
-openModal(type){
-  this.setState({uploadModal: true, formType: type});
-}
-
-closeModal(){
-  this.setState({uploadModal: false, formType: ""});
-}
+  closeModal(){
+    this.setState({uploadModal: false, formType: ""});
+  }
 
   componentWillReceiveProps(nextProps){
     if(!nextProps.currentUser){
@@ -61,6 +61,7 @@ closeModal(){
 
           <SongFormContainer closeModal={this.closeModal}
             formType={this.state.formType}
+            clearSongErrors={this.props.cleaerSongErrors}
             song={blankSong}/>
         </Modal>
 

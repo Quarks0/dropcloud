@@ -62,6 +62,8 @@ class SongDetail extends React.Component{
               <li key={i}>{comment.body} - {comment.username}</li>
           ))}
         </ul>
+        <br/>
+        
 
       </section>
     );

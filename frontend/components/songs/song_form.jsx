@@ -8,7 +8,6 @@ class SongForm extends React.Component{
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
-    this.clearFields = this.clearFields.bind(this);
     this.uploadButtons = this.uploadButtons.bind(this);
   }
 
@@ -50,10 +49,6 @@ class SongForm extends React.Component{
         </div>
       );
     }
-  }
-
-  clearFields(){
-    this.setState({title: "", artist: "", url:"", user_id: null, image_url: ""});
   }
 
   handleSubmit(e){

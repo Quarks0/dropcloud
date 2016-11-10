@@ -13,7 +13,7 @@ class Greeting extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {loginModal: false, formType: ""};
+    this.state = {loginModal: false, formType: "", demo: false};
   }
 
   componentWillReceiveProps(nextProps){
@@ -22,13 +22,13 @@ class Greeting extends React.Component{
     }
   }
 
-  openModal(type){
+  openModal(type, demo){
     this.props.clearErrors();
-    this.setState({loginModal: true, formType: type});
+    this.setState({loginModal: true, formType: type, demo: demo});
   }
 
   closeModal(){
-    this.setState({loginModal: false, formType: ""});
+    this.setState({loginModal: false, formType: "", demo: false});
   }
 
   render () {
@@ -54,7 +54,8 @@ class Greeting extends React.Component{
           style={loginModalStyle}>
 
           <SessionFormContainer formType={this.state.formType} closeModal={this.closeModal}
-            clearErrors={this.props.clearErrors}/>
+            clearErrors={this.props.clearErrors}
+            demo={this.state.demo}/>
 
         </Modal>
       </div>

@@ -37,7 +37,6 @@ export const updateSong = (song,success,error) => {
 };
 
 export const deleteSong = (id,success,error) => {
-	console.log(id);
 	$.ajax({
 		method: 'delete',
 		url: `/api/songs/${id}`,

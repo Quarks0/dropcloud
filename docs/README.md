@@ -18,7 +18,7 @@ sufficient CSS styling:
 - [X] Song CRUD
 - [ ] Playing songs with sound controls and continuous play
 - [ ] Comments
-- [ ] User pages
+- [x] User pages
 
 ## Design Docs
 * [View Wireframes][wireframes]

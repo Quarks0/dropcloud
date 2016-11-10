@@ -53,6 +53,12 @@ class UserDetail extends React.Component{
             user={this.props.user}/>
         </Modal>
 
+        <ul className="user-songs-container">
+          {this.props.user.songs.map((comment, i) => (
+              <li key={i}>{song.title} - {comment.song.artist}</li>
+          ))}
+        </ul>
+        <br/>
         <ul className="user-comments-container">
           {this.props.user.comments.map((comment, i) => (
               <li key={i}>{comment.body} - {comment.song.title}</li>
