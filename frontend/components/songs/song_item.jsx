@@ -8,7 +8,7 @@ class SongItem extends React.Component{
   }
 
   render(){
-    const imageURL = this.props.song.image_url ? this.props.song.image_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png";
+    const imageURL = this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url;
     const handleClick = url => e => this.props.router.push(url);
 
     return (

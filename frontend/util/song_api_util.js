@@ -20,17 +20,18 @@ export const createSong = (song,success,error) => {
 	$.ajax({
 		method: 'post',
 		url: '/api/songs',
-    data: {song: song},
+    data: song,
 		success,
 		error
 	});
 };
 
 export const updateSong = (song,success,error) => {
+	console.log(song);
 	$.ajax({
 		method: 'patch',
-		url: `/api/songs/${song.id}`,
-    data: {song: song},
+		url: `/api/songs/${song.song.id}`,
+    data: song,
 		success,
 		error
 	});

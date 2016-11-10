@@ -1,17 +1,21 @@
 import { connect } from 'react-redux';
-import { createSong, updateSong } from '../../actions/song_actions';
-import SongForm from './song_index';
+import { createSong, updateSong, clearErrors } from '../../actions/song_actions';
+import SongForm from './song_form';
+import { selectSongDetail } from '../../reducers/selector';
 
 
-const mapStateToProps = (state) => ({
-  songs: state.songs
-});
+const mapStateToProps = (state,ownProps) => {
+  return {
+  song: ownProps.song,
+  currentUser: state.session.currentUser,
+  errors: state.songs.errors
+}};
 
 const mapDispatchToProps = (dispatch) => {
-  console.log("Inside song form container");
   return {
     createSong: (song) => dispatch(createSong(song)),
-    updateSong: (song) => dispatch(updateSong(song))
+    updateSong: (song) => dispatch(updateSong(song)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

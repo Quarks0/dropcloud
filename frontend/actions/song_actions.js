@@ -5,7 +5,8 @@ export const UPDATE_SONG = "UPDATE_SONG";
 export const DELETE_SONG = "DELETE_SONG";
 export const RECEIVE_ALL_SONGS = "RECEIVE_ALL_SONGS";
 export const RECEIVE_SONG = "RECEIVE_SONG";
-export const CLEAR_ERRORS = "CLEAR_ERRORS"
+export const CLEAR_SONG_ERRORS = "CLEAR_SONG_ERRORS"
+export const RECEIVE_SONG_ERRORS = "RECEIVE_SONG_ERRORS";
 
 export const requestAllSongs = () => ({
   type: REQUEST_ALL_SONGS
@@ -41,6 +42,11 @@ export const receiveSong = song => ({
   song
 });
 
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
+export const clearSongErrors = () => ({
+  type: CLEAR_SONG_ERRORS
+});
+
+export const receiveSongErrors = errors => ({
+  type: RECEIVE_SONG_ERRORS,
+  errors
 });

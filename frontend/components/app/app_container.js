@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import App from './app';
-import { requestAllSongs, clearErrors } from '../../actions/song_actions';
+import { requestAllSongs, clearSongErrors } from '../../actions/song_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   requestAllSongs: () => dispatch(requestAllSongs()),
-  clearErrors: () => dispatch(clearErrors())
+  clearSongErrors: () => dispatch(clearSongErrors())
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);

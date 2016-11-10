@@ -20,8 +20,6 @@ class App extends React.Component{
 
 
 openModal(type){
-  console.log("opening modal");
-  this.props.clearErrors();
   this.setState({uploadModal: true, formType: type});
 }
 
@@ -44,7 +42,8 @@ closeModal(){
   }
 
   render() {
-  let username = this.props.currentUser ? this.props.currentUser.username : "";
+  const username = this.props.currentUser ? this.props.currentUser.username : "";
+  const blankSong = {title: "", artist: "", url:"", user_id: null, image_url: null};
   return (
       <div>
         <header>
@@ -60,12 +59,16 @@ closeModal(){
         <Modal isOpen={this.state.uploadModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>
 
-          <SongFormContainer closeModal={this.closeModal} clearErrors={this.props.clearErrors} formType={this.state.formType}/>
+          <SongFormContainer closeModal={this.closeModal}
+            formType={this.state.formType}
+            song={blankSong}/>
         </Modal>
 
         <main className="Content">
           {this.props.children}
         </main>
+
+        <footer>player placeholder</footer>
       </div>
   );
   }

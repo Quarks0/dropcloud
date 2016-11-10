@@ -13,7 +13,6 @@ class SongDetail extends React.Component{
   }
 
   openModal(type){
-    this.props.clearErrors();
     this.setState({songModal: true, formType: type});
   }
 
@@ -22,25 +21,28 @@ class SongDetail extends React.Component{
   }
 
   componentWillMount(){
-    this.props.requestSong(this.props.params.songId);
+    this.props.requestAllSongs();
   }
 
   render (){
-    debugger;
-    const imageURL = this.props.song.image_url ? this.props.song.image_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png";
     console.log(this.props);
+    const imageURL = this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url;
     return(
       <section className="song-detail">
         <img src={imageURL} />
-        <span className="song-detail-title">Title: {this.props.song.title}</span>
-        <span className="song-detail-artist">Artist: {this.props.song.artist}</span>
-        <span className="song-detail-user">Uploaded by: {this.props.song.user.username}</span>
+        <span className="song-detail-text">Title: {this.props.song.title}</span>
+        <span className="song-detail-text">Artist: {this.props.song.artist}</span>
+        <span className="song-detail-text">Uploaded by: {this.props.song.user.username}</span>
         <button className="song-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
-        <button className="song-detail-button" onClick={this.props.deleteSong}>Delete</button>
+        <button className="song-detail-delete" onClick={this.props.deleteSong(this.props.song.id)}>Delete</button>
 
         <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>
-          <SongFormContainer closeModal={this.closeModal} clearErrors={this.props.clearErrors} formType={this.state.formType}/>
+          <SongFormContainer
+            closeModal={this.closeModal}
+            clearErrors={this.props.clearSongErrors}
+            formType={this.state.formType}
+            song={this.props.song}/>
         </Modal>
 
         <ul className="song-comments-container">
