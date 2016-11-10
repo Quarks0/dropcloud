@@ -7,11 +7,8 @@ import {playSong, pauseSong} from '../../actions/playback_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-<<<<<<< HEAD
     song: selectSongDetail(state.songs.songs)[ownProps.params.songId-1]
-=======
-  song: selectSongDetail(state.songs.songs)[ownProps.params.songId]
->>>>>>> parent of 4d29c14... song CRUD finalized
+
   };
 };
 

@@ -10,12 +10,9 @@ class SongDetail extends React.Component{
     super(props);
 
     this.state={songModal: false, formType: ""};
-<<<<<<< HEAD
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.togglePlay = this.togglePlay.bind(this)
-=======
->>>>>>> parent of 4d29c14... song CRUD finalized
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   openModal(type){
@@ -61,7 +58,7 @@ class SongDetail extends React.Component{
           ))}
         </ul>
         <br/>
-        
+
 
       </section>
     );
