@@ -27,7 +27,6 @@ export const createSong = (song,success,error) => {
 };
 
 export const updateSong = (song,success,error) => {
-	console.log(song);
 	$.ajax({
 		method: 'patch',
 		url: `/api/songs/${song.song.id}`,

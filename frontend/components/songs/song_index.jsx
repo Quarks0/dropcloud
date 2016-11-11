@@ -1,5 +1,6 @@
 import React from 'react';
 import SongItemContainer from './song_item_container';
+import { Link, withRouter } from 'react-router';
 
 class SongIndex extends React.Component{
   constructor(props){
@@ -9,7 +10,10 @@ class SongIndex extends React.Component{
   render(){
     return (
       <div className="song-index">
-        <h3>Songs</h3>
+        <div className="song-sidebar">
+          <h3>Songs</h3>
+          <h3><Link to={`/home/users/`} className="link">Users</Link></h3>
+        </div>
         <ul className="song-item-container">
           {this.props.songs.map((song, i) => (
             <li key={i}><SongItemContainer song={song}/></li>

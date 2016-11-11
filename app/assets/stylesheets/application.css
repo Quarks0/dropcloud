@@ -254,9 +254,20 @@ button::-moz-focus-inner {
   flex: 1 100%;
 }
 
-.song-index h3{
+.song-sidebar{
   padding: 10px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.song-sidebar h3{
+  padding: 10px;
+}
+
+.link{
+  text-decoration: none;
+  color: black;
 }
 
 .song-item-container{
@@ -367,9 +378,25 @@ button::-moz-focus-inner {
   border-radius: 5px;
 }
 
+.song-comments{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
 .song-comment{
   border: 1px solid black;
   border-radius: 5px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.comment-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .song-comment-body{
@@ -377,90 +404,31 @@ button::-moz-focus-inner {
   border-radius: 5px;
 }
 
-
-
-
-
-.user-index{
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  flex: 1 80%;
-  width: 100%;
-  height: 70%
-}
-
-.user-index h3{
-  padding-right: 10px;
-}
-
- .user-item {
-   border: 1px solid black;
-   border-radius: 5px;
- }
-
- .user-item-text{
-   padding-right: 10px;
- }
- .user-item img{
-   height: 10px;
-   width: 10px;
-   padding-left: 10px;
-   padding-right: 10px;
- }
-
- .user-detail{
-   display: flex;
-
- }
-
- .user-detail img{
-   display: inline-block;
-   width: 50px;
-   height: 50px;
- }
-
- .user-detail-text{
-   display: inline-block;
-   font-family: 'Roboto', sans-serif;
-   font-size: 20px;
- }
-
- .user-detail-button{
-   display: inline-block;
-   border-radius: 10px;
-   padding: 5px;
-   background-color: #bc78ff;
- }
-
- .user-detail-button:hover{
-   background-color: #ad42ff;
- }
-
-.user-detail-delete{
-  display: inline-block;
-  transition-duration: 0.4s;
-  border-radius: 10px;
-  padding: 5px;
-  background-color: white;
-  color: black;
-  border: 2px solid #f44336;
-}
-
-.user-detail-delete:hover{
+.comment-delete{
+  transition-duration: .4s;
   background-color: #f44336;
+  border-radius: 5px;
+  padding: 5px;
+  border: 2px solid #f44336;
   color: white;
+  align-self: flex-end;
 }
 
-.user-comments-container{
-
+.comment-delete:hover{
+  background-color: white;
+  color: #f44336;
 }
 
-.user-comment-body{
-  display: inline-block;
+.comment-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
 }
 
-.user-song-text{
-
+.comment-textbox{
+  width: 200px;
+  height: 100px;
+  margin: 10px;
 }

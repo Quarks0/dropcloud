@@ -64,7 +64,7 @@ class UserForm extends React.Component{
 		));
 
 		return (
-			<div className="user-form-container">
+			<div className="session-form-container">
 				<h4>Edit Information</h4>
 
         <ul>{errors}</ul>
@@ -73,19 +73,19 @@ class UserForm extends React.Component{
         {this.uploadButtons()}
 
 				<form onSubmit={this.handleSubmit} className="session-form">
-        	<div className="user-form">
+        	<div className="session-form">
 						<label> Description
 							<input type="text"
 								value={this.state.description}
 								onChange={this.update("description")}
-								className="user-input" />
+								className="login-input" />
 						</label>
 						<br/>
 						<label> Email
 							<input type="email"
 								value={this.state.email}
 								onChange={this.update("email")}
-								className="user-input" />
+								className="login-input" />
 						</label>
 						<br/>
 						<input type="submit" value="Submit" />

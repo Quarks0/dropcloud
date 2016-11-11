@@ -3,11 +3,12 @@ import { createSong, updateSong, deleteSong, requestSong, clearSongErrors } from
 import SongDetail from './song_detail';
 import {selectSongDetail} from '../../reducers/selector';
 import {playSong, pauseSong} from '../../actions/playback_actions';
-
+import {createComment, deleteComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    song: selectSongDetail(state.songs.songs)[ownProps.params.songId-1]
+    song: state.songs.songs ? selectSongDetail(state.songs.songs)[ownProps.params.songId-1] : null,
+    currentUser: state.session.currentUser
   });
 };
 
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     deleteSong: (id) => dispatch(deleteSong(id)),
     clearSongErrors: () => dispatch(clearSongErrors()),
     playSong: (song) => dispatch(playSong(song)),
-    pauseSong: () => dispatch(pauseSong())
+    pauseSong: () => dispatch(pauseSong()),
+    createComment: (comment) => dispatch(createComment(comment))
   };
 };
 

@@ -14,7 +14,6 @@ const SongReducer = (state = _defaultSongs, action) => {
       const songs = action.songs;
       return merge({}, _defaultSongs, {songs: songs});
     case RECEIVE_SONG:
-      console.log(action);
       const song = action.song;
       return merge(newState, {songs: {[song.id]: song}});
     case RECEIVE_SONG_ERRORS:

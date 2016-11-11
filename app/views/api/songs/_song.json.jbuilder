@@ -4,5 +4,6 @@ json.comments do
     json.body comment.body
     json.username comment.user.username
     json.parent_id comment.parent_id
+    json.id comment.id
   end
 end
