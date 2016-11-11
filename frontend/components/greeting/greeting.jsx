@@ -34,7 +34,7 @@ class Greeting extends React.Component{
   render () {
     return(
       <div>
-        <header className="greeting-header">
+        <header className="header">
           <Link to="/home" className="header-link"><img src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
             <button onClick={this.openModal.bind(this,"login", false)}>Log In</button>
@@ -48,7 +48,7 @@ class Greeting extends React.Component{
             A collection of songs with only the heaviest of drops
           </p>
           <br/>
-          <button onClick={this.openModal.bind(this,"login", true)}>Check it out</button>
+          <button className="form-button" onClick={this.openModal.bind(this,"login", true)}>Check it out</button>
         </main>
         <Modal isOpen={this.state.loginModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>

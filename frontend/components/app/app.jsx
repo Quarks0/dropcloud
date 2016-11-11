@@ -19,7 +19,6 @@ class App extends React.Component{
   }
 
   openModal(type){
-    this.props.clearSongErrors();
     this.setState({uploadModal: true, formType: type});
   }
 
@@ -30,6 +29,9 @@ class App extends React.Component{
   componentWillReceiveProps(nextProps){
     if(!nextProps.currentUser){
       this.props.router.push('/');
+    }
+    else{
+      this.closeModal();
     }
   }
 
@@ -45,8 +47,8 @@ class App extends React.Component{
   const username = this.props.currentUser ? this.props.currentUser.username : "";
   const blankSong = {title: "", artist: "", url:"", user_id: null, image_url: null};
   return (
-      <div>
-        <header>
+      <div className="content">
+        <header className="header">
           <Link to="/home" className="header-link"><img src="https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/logo_kafhys.gif" className="logo"/><h3 className="header-title">DropCloud</h3></Link>
           <nav className="nav-bar">
             <button onClick={this.openModal.bind(this,"upload")}>Upload</button>
@@ -56,20 +58,19 @@ class App extends React.Component{
           </nav>
         </header>
 
-        <Modal isOpen={this.state.uploadModal} onRequestClose={this.closeModal.bind(this)}
-          style={loginModalStyle}>
+        <main className="main">
+          <Modal isOpen={this.state.uploadModal} onRequestClose={this.closeModal.bind(this)}
+            style={loginModalStyle}>
 
-          <SongFormContainer closeModal={this.closeModal}
-            formType={this.state.formType}
-            clearSongErrors={this.props.cleaerSongErrors}
-            song={blankSong}/>
-        </Modal>
-
-        <main className="Content">
+            <SongFormContainer closeModal={this.closeModal}
+              formType={this.state.formType}
+              clearSongErrors={this.props.cleaerSongErrors}
+              song={blankSong}/>
+          </Modal>
           {this.props.children}
         </main>
 
-        <footer><PlayerContainer /></footer>
+        <footer className="playback-footer"><PlayerContainer /></footer>
       </div>
   );
   }

@@ -14,6 +14,7 @@ class SongItem extends React.Component{
     return (
     <div className="song-item" onClick={handleClick(`/home/songs/${this.props.song.id}`)}>
       <img src={imageURL}/>
+      <span className="song-item-text">{this.props.song.user.username}</span>
       <span className="song-item-text">
         {this.props.song.title} - {this.props.song.artist}
       </span>

@@ -23,25 +23,25 @@ class SongDetail extends React.Component{
     this.setState({songModal: false, formType: ""});
   }
 
-  componentWillMount(){
-    this.props.requestAllSongs();
+  togglePlay(){
+    //for playback
   }
 
-  togglePlay(){
-
+  handleDelete() {
+    this.props.deleteSong(this.props.song.id);
+    this.props.router.push('/home');
   }
 
   render (){
     console.log(this.props);
-    const imageURL = this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url;
     return(
       <section className="song-detail">
-        <img src={imageURL} onClick={this.togglePlay}/>
+        <img src={this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url} onClick={this.togglePlay}/>
         <span className="song-detail-text">Title: {this.props.song.title}</span>
         <span className="song-detail-text">Artist: {this.props.song.artist}</span>
         <span className="song-detail-text">Uploaded by: {this.props.song.user.username}</span>
         <button className="song-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
-        <button className="song-detail-delete" onClick={this.props.deleteSong(this.props.song.id)}>Delete</button>
+        <button className="song-detail-delete" onClick={this.handleClick}>Delete</button>
 
         <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
           style={loginModalStyle}>
@@ -65,4 +65,4 @@ class SongDetail extends React.Component{
   }
 }
 
-export default SongDetail;
+export default withRouter(SongDetail);

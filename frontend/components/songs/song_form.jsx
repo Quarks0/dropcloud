@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router';
 
 class SongForm extends React.Component{
   constructor(props){
@@ -61,10 +62,11 @@ class SongForm extends React.Component{
       user_id: this.props.currentUser.id,
       image_url: img};
     this.props.formType === "edit" ? this.props.updateSong({song}) : this.props.createSong({song});
+    this.props.closeModal();
+    this.props.formType === "edit" ? this.props.router.replace(`/home/songs/${song.id}`) : this.props.router.replace("/home");
   }
 
   render(){
-    console.log(this.state);
     const errors = this.props.errors.map((error, i) =>(
 			<li key={i} className="form-error">{error}</li>
 		));
@@ -72,31 +74,29 @@ class SongForm extends React.Component{
 		const type = this.props.formType === "upload" ? "Upload" : "Edit";
 
 		return (
-			<div className="song-form-container">
+			<div className="session-form-container">
 				<h4>{type}</h4>
-
-        <ul>{errors}</ul>
-        <br/>
 
         {this.uploadButtons()}
 
 				<form onSubmit={this.handleSubmit} className="session-form">
-        	<div className="song-form">
-						<label> Title
+          <ul>{errors}</ul>
+        	<div className="login-form">
+						<label><h5>Title</h5>
 							<input type="text"
 								value={this.state.title}
 								onChange={this.update("title")}
-								className="song-input" />
+								className="login-input" />
 						</label>
 						<br/>
-						<label> Artist
+						<label> <h5>Artist</h5>
 							<input type="text"
 								value={this.state.artist}
 								onChange={this.update("artist")}
-								className="song-input" />
+								className="login-input" />
 						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input className='form-button'  type="submit" value="Submit" />
 					</div>
 				</form>
 			</div>
@@ -104,4 +104,4 @@ class SongForm extends React.Component{
   }
 }
 
-export default SongForm;
+export default withRouter(SongForm);
