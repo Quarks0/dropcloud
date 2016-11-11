@@ -1,5 +1,6 @@
 import { RECEIVE_ALL_SONGS, RECEIVE_SONG, CLEAR_SONG_ERRORS, RECEIVE_SONG_ERRORS} from '../actions/song_actions';
 import merge from 'lodash/merge';
+import {RECEIVE_COMMENT} from '../actions/comment_actions';
 
 const _defaultSongs = {
   songs: null,
@@ -21,6 +22,9 @@ const SongReducer = (state = _defaultSongs, action) => {
       return merge(newState, {
         errors
       });
+    case RECEIVE_COMMENT:
+      newState['songs'][action.song.id]['comments'] = action.song.comments;
+      return newState;
     case CLEAR_SONG_ERRORS:
       return _defaultSongs;
     default:

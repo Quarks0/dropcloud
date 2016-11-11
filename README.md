@@ -9,7 +9,7 @@ DropCloud is a music based site influenced by SoundCloud built on a Rails/Redux 
 
 ### Song listings and song creation tools
 
-
+![placeholder](wireframes/placeholder image.jpg)
 
 ### User Pages
 

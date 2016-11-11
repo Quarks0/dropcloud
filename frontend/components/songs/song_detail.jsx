@@ -87,7 +87,6 @@ class SongDetail extends React.Component{
           </div>
 
           <div className="song-comments-container">
-            <div className="comment-container">
               <form onSubmit={this.handleSubmit} className="comment-form">
                   <h4>Add Comment:</h4>
                   <textarea className="comment-textbox" value={this.state.body} onChange={this.update("body")}/>
@@ -100,7 +99,6 @@ class SongDetail extends React.Component{
                   <li key={i} className="song-comment"><CommentItemContainer comment={comment} currentUser={this.props.currentUser}/></li>
                 ))}
               </ul>
-            </div>
           </div>
 
         </section>

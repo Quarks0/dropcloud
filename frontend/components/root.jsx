@@ -61,7 +61,6 @@ const Root = ({ store }) => {
         <Route path="/home" component={App} onEnter={_ensureLoggedIn}>
           <IndexRoute component={SongIndexContainer} onEnter={_requestAllSongs}/>
           <Route path="songs/:songId" component={SongDetailContainer} onEnter={_requestAllSongs} />
-          <Route path="profile" component={UserDetailContainer} onEnter={_requestAllUsers}/>
           <Route path="users" component={UserIndexContainer} onEnter={_requestAllUsers} />
           <Route path="users/:userId" component={UserDetailContainer} onEnter={_requestAllUsers} />
         </Route>

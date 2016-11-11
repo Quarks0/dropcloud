@@ -19,11 +19,11 @@ class App extends React.Component{
   }
 
   openModal(type){
-    this.setState({uploadModal: true, formType: type});
+    this.setState({songModal: true, formType: type});
   }
 
   closeModal(){
-    this.setState({uploadModal: false, formType: ""});
+    this.setState({songModal: false, formType: ""});
   }
 
   componentWillReceiveProps(nextProps){
@@ -40,7 +40,7 @@ class App extends React.Component{
   }
 
   goToProfile(){
-    this.props.router.push('/home/profile')
+    this.props.router.push(`/home/users/${this.props.currentUser.id}`);
   }
 
   render() {
@@ -59,7 +59,7 @@ class App extends React.Component{
         </header>
 
         <main className="main">
-          <Modal isOpen={this.state.uploadModal} onRequestClose={this.closeModal.bind(this)}
+          <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
             style={loginModalStyle}>
 
             <SongFormContainer closeModal={this.closeModal}
