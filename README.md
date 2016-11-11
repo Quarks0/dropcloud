@@ -1,7 +1,7 @@
 # DropCloud
 [DropCloud][dropcloud]
 
-[dropcloud]: http://www.dropcloud.online/
+[dropcloud]: http://dropcloud.online/
 
 DropCloud is a music based site influenced by SoundCloud built on a Rails/Redux framework.
 
