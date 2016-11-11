@@ -49,8 +49,11 @@ class SongDetail extends React.Component{
       <section className="song-detail-container">
         <div className="song-detail">
           <img src={this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url} onClick={this.togglePlay}/>
-          <span className="song-detail-text">{this.props.song.title} - {this.props.song.artist}</span>
-          <span className="song-detail-text-user">Uploaded by: {this.props.song.user.username}</span>
+          <div className="song-detail-text-box">
+            <span className="song-detail-text">{this.props.song.title} - {this.props.song.artist}</span>
+            <span className="song-detail-text-user">Uploaded by: {this.props.song.user.username}</span>
+          </div>
+
           {this.editandDeleteButtons}
 
           <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
@@ -66,21 +69,17 @@ class SongDetail extends React.Component{
         <div className="song-comments-container">
           <div className="comment-container"><h4>Add Comment:</h4>
 
+            <h4>Comments</h4>
+            <ul className="song-comments">
+              {this.props.song.comments.map((comment, i) => (
+                <li key={i} className="song-comment">
+                  <div className="comment-username">{comment.username} commented: </div>
+                  <div className="comment-body">{comment.body}</div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-
-          <h4>Comments</h4>
-          <ul className="song-comments">
-            {this.props.song.comments.map((comment, i) => (
-              <li key={i} className="song-comment">
-                <div className="comment-username">{comment.username} commented: </div>
-                <div className-"comment-body">{comment.body}</div>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <br/>
-
 
       </section>
     );
