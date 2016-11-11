@@ -17,7 +17,7 @@ sufficient CSS styling:
 - [x] Account creation/login (guest included)
 - [X] Song CRUD
 - [ ] Playing songs with sound controls and continuous play
-- [ ] Comments
+- [x] Comments
 - [x] User pages
 
 ## Design Docs

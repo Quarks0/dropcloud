@@ -254,6 +254,10 @@ button::-moz-focus-inner {
   flex: 1 100%;
 }
 
+.current-index {
+  text-decoration: underline;
+}
+
 .song-sidebar{
   padding: 10px;
   flex: 1;

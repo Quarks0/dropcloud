@@ -11,7 +11,7 @@ class SongIndex extends React.Component{
     return (
       <div className="song-index">
         <div className="song-sidebar">
-          <h3>Songs</h3>
+          <h3 className="current-index">Songs</h3>
           <h3><Link to={`/home/users/`} className="link">Users</Link></h3>
         </div>
         <ul className="song-item-container">
