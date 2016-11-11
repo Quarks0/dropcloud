@@ -23,10 +23,6 @@ class UserDetail extends React.Component{
     this.setState({userModal: false});
   }
 
-  componentWillMount(){
-    this.props.requestUser(this.props.params.userId);
-  }
-
   editButton() {
     if (this.props.params.userId == this.props.currentUser.id){
       return(
@@ -36,6 +32,7 @@ class UserDetail extends React.Component{
   }
 
   breakfix(){
+    console.log(this.props);
     if (this.props.user){
       const imageURL = (this.props.user && this.props.user.profile_url) !== "" ? this.props.user.profile_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg";
       return (

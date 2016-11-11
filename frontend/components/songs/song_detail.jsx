@@ -25,7 +25,7 @@ class SongDetail extends React.Component{
   }
 
   closeModal(){
-    this.setState({songModal: false, formType: ""});
+    this.setState({songModal: false, formType: "", body: "", user_id: null, song_id:null});
   }
 
   togglePlay(){
@@ -33,18 +33,19 @@ class SongDetail extends React.Component{
   }
 
   editandDeleteButtons() {
-    if (this.props.params.userId == this.props.currentUser.id){
+    if (this.props.song.user.id == this.props.currentUser.id){
       return(
         <div className="song-detail-controls">
           <button className="song-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
-          <button className="song-detail-delete" onClick={this.handleClick}>Delete</button>
+          <button className="song-detail-delete" onClick={this.handleDelete}>Delete</button>
         </div>
       );
     }
   }
 
   handleDelete() {
-    this.props.deleteSong(this.props.song.id);
+    console.log(this.props);
+    this.props.deleteSong(this.props.params.songId);
     this.props.router.push('/home');
   }
 
@@ -77,6 +78,7 @@ class SongDetail extends React.Component{
 
             <Modal isOpen={this.state.songModal} onRequestClose={this.closeModal.bind(this)}
               style={loginModalStyle}>
+
               <SongFormContainer
                 closeModal={this.closeModal}
                 clearErrors={this.props.clearSongErrors}

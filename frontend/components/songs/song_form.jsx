@@ -63,7 +63,7 @@ class SongForm extends React.Component{
       image_url: img};
     this.props.formType === "edit" ? this.props.updateSong({song}) : this.props.createSong({song});
     this.props.closeModal();
-    this.props.formType === "edit" ? this.props.router.replace(`/home/songs/${song.id}`) : this.props.router.replace("/home");
+    this.props.formType === "edit" ? this.props.router.push(`/home/songs/${song.id}`) : this.props.router.push("/home");
   }
 
   render(){

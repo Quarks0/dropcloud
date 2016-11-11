@@ -7,7 +7,7 @@ import {selectUserDetail} from '../../reducers/selector';
 const mapStateToProps = (state, ownProps) => {
   return {
     currentUser: state.session.currentUser,
-    user: selectUserDetail(state.users.users)[ownProps.params.userId-1]
+    user: state.users.users ? selectUserDetail(state.users.users)[ownProps.params.userId-1] : null,
   };
 };
 

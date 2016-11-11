@@ -63,7 +63,7 @@ const Root = ({ store }) => {
           <Route path="songs/:songId" component={SongDetailContainer} onEnter={_requestSong} />
           <Route path="profile" component={UserDetailContainer} onEnter={_requestProfile}/>
           <Route path="users" component={UserIndexContainer} onEnter={_requestAllUsers} />
-          <Route path="users/:userId" component={UserDetailContainer} onEnter={_requestUser} />
+          <Route path="users/:userId" component={UserDetailContainer} onEnter={_requestAllUsers} />
         </Route>
       </Router>
     </Provider>
