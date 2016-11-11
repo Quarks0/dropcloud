@@ -1,7 +1,7 @@
 # DropCloud
 [DropCloud][dropcloud]
 
-[dropcloud]: https://thisisdropcloud.herokuapp.com/
+[dropcloud]: http://www.dropcloud.online/
 
 DropCloud is a music based site influenced by SoundCloud built on a Rails/Redux framework.
 
@@ -41,7 +41,7 @@ Another feature of audio playback includes playlists and/or song queues to play 
 
 ### Search bar
 
-A search function would allow users to find any songs, comments, and users within DropCloud. This feature would likely implement the react native search bar.
+A search function would allow users to find any songs, comments, and users within DropCloud. This feature would likely implement the react native search bar or the masonry search package.
 
 ### User messages
 
