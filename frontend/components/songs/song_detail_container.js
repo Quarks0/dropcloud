@@ -6,12 +6,9 @@ import {playSong, pauseSong} from '../../actions/playback_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
-  console.log(ownProps.params);
-  return {
+  return ({
     song: selectSongDetail(state.songs.songs)[ownProps.params.songId-1]
-
-  };
+  });
 };
 
 const mapDispatchToProps = (dispatch) => {

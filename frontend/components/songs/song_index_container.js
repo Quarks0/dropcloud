@@ -5,6 +5,7 @@ import { selectAllSongs } from '../../reducers/selector';
 
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return({
   songs: selectAllSongs(state.songs.songs)
 });};
