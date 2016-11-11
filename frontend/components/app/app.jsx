@@ -64,7 +64,7 @@ class App extends React.Component{
 
             <SongFormContainer closeModal={this.closeModal}
               formType={this.state.formType}
-              clearSongErrors={this.props.cleaerSongErrors}
+              clearSongErrors={this.props.clearSongErrors}
               song={blankSong}/>
           </Modal>
           {this.props.children}

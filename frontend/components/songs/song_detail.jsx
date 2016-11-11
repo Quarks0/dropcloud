@@ -44,7 +44,6 @@ class SongDetail extends React.Component{
   }
 
   handleDelete() {
-    console.log(this.props);
     this.props.deleteSong(this.props.params.songId);
     this.props.router.push('/home');
   }
@@ -80,7 +79,7 @@ class SongDetail extends React.Component{
               style={loginModalStyle}>
 
               <SongFormContainer
-                closeModal={this.closeModal}
+                closeModal={this.closeModal.bind(this)}
                 clearErrors={this.props.clearSongErrors}
                 formType={this.state.formType}
                 song={this.props.song}/>

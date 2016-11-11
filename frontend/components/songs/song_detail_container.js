@@ -6,8 +6,9 @@ import {playSong, pauseSong} from '../../actions/playback_actions';
 import {createComment, deleteComment} from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(selectSongDetail(state.songs.songs));
   return ({
-    song: state.songs.songs ? selectSongDetail(state.songs.songs)[ownProps.params.songId-1] : null,
+    song: selectSongDetail(state.songs.songs)[ownProps.params.songId-1],
     currentUser: state.session.currentUser
   });
 };

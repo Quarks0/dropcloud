@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 import Modal from 'react-modal';
 import {loginModalStyle} from '../../util/modal_styles';
@@ -32,7 +32,6 @@ class UserDetail extends React.Component{
   }
 
   breakfix(){
-    console.log(this.props);
     if (this.props.user){
       const imageURL = (this.props.user && this.props.user.profile_url) !== "" ? this.props.user.profile_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_profile_uon2xl.jpg";
       return (
@@ -56,13 +55,15 @@ class UserDetail extends React.Component{
           </Modal>
 
           <ul className="user-songs-container">
+            <h3>Uploaded songs</h3>
             {this.props.user.songs.map((song, i) => (
-                <li key={i}>{song.title} - {song.artist}</li>
+                <li key={i} className="user-song-item"><Link to={`/home/songs/${song.id}`}>{song.title} - {song.artist}</Link></li>
             ))}
           </ul>
-          <ul className="user-comments-container">
+          <ul className="user-songs-container">
+            <h3>Comments</h3>
             {this.props.user.comments.map((comment, i) => (
-                <li key={i}>{comment.song.title}: {comment.body}</li>
+                <li key={i} className="user-song-item"><Link to={`/home/songs/${comment.song.id}`}>{comment.song.title}: {comment.body}</Link></li>
             ))}
           </ul>
 
