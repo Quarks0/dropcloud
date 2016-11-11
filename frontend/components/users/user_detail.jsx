@@ -26,7 +26,7 @@ class UserDetail extends React.Component{
   editButton() {
     if (this.props.params.userId == this.props.currentUser.id){
       return(
-        <button className="user-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
+        <button className="form-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
       );
     }
   }
@@ -40,8 +40,8 @@ class UserDetail extends React.Component{
             <img src={imageURL}/>
             <div className="song-detail-text-box">
               <span className="song-detail-text">Username: {this.props.user.username}</span>
-              <span className="song-detail-text">Description: {this.props.user.description}</span>
               <span className="song-detail-text">Email: {this.props.user.email}</span>
+              <span className="song-detail-text-user">Description: {this.props.user.description}</span>
               {this.editButton()}
             </div>
           </div>
@@ -57,13 +57,13 @@ class UserDetail extends React.Component{
           <ul className="user-songs-container">
             <h3>Uploaded songs</h3>
             {this.props.user.songs.map((song, i) => (
-                <li key={i} className="user-song-item"><Link to={`/home/songs/${song.id}`}>{song.title} - {song.artist}</Link></li>
+                <li key={i} className="user-song-item"><Link className="link" to={`/home/songs/${song.id}`}>{song.title} - {song.artist}</Link></li>
             ))}
           </ul>
           <ul className="user-songs-container">
             <h3>Comments</h3>
             {this.props.user.comments.map((comment, i) => (
-                <li key={i} className="user-song-item"><Link to={`/home/songs/${comment.song.id}`}>{comment.song.title}: {comment.body}</Link></li>
+                <li key={i} className="user-song-item"><Link className="link" to={`/home/songs/${comment.song.id}`}>{comment.song.title} - {comment.song.artist}: "{comment.body}"</Link></li>
             ))}
           </ul>
 

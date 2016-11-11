@@ -35,7 +35,6 @@ class SongForm extends React.Component{
   }
 
   uploadButtons(){
-    if (this.props.formType === "upload"){
       return(
         <div>
           <button className='form-button'
@@ -49,7 +48,6 @@ class SongForm extends React.Component{
           <br/>
         </div>
       );
-    }
   }
 
   handleSubmit(e){

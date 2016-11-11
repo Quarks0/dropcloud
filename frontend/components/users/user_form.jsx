@@ -67,28 +67,26 @@ class UserForm extends React.Component{
 			<div className="session-form-container">
 				<h4>Edit Information</h4>
 
-        <ul>{errors}</ul>
-        <br/>
-
         {this.uploadButtons()}
 
 				<form onSubmit={this.handleSubmit} className="session-form">
-        	<div className="session-form">
-						<label> Description
+          <ul>{errors}</ul>
+        	<div className="login-form">
+						<label> <h5>Description</h5>
 							<input type="text"
 								value={this.state.description}
 								onChange={this.update("description")}
 								className="login-input" />
 						</label>
 						<br/>
-						<label> Email
-							<input type="email"
+						<label> <h5>Email</h5>
+							<input type="text"
 								value={this.state.email}
 								onChange={this.update("email")}
 								className="login-input" />
 						</label>
 						<br/>
-						<input type="submit" value="Submit" />
+						<input className='form-button' type="submit" value="Submit" />
 					</div>
 				</form>
 			</div>

@@ -36,7 +36,7 @@ class SongDetail extends React.Component{
     if (this.props.song.user.id == this.props.currentUser.id){
       return(
         <div className="song-detail-controls">
-          <button className="song-detail-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
+          <button className="form-button" onClick={this.openModal.bind(this, "edit")}>Edit</button>
           <button className="song-detail-delete" onClick={this.handleDelete}>Delete</button>
         </div>
       );
@@ -96,7 +96,7 @@ class SongDetail extends React.Component{
               <h4>Comments</h4>
               <ul className="song-comments">
                 {this.props.song.comments.map((comment, i) => (
-                  <li key={i} className="song-comment"><CommentItemContainer comment={comment} currentUser={this.props.currentUser}/></li>
+                  <li key={i}><CommentItemContainer comment={comment} currentUser={this.props.currentUser}/></li>
                 ))}
               </ul>
           </div>

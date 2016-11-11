@@ -25,9 +25,9 @@ class CommentItem extends React.Component{
 
   render(){
     return (
-      <div>
+      <div className="song-comment">
         <div className="#comment-text">
-          <div className="comment-username">{this.props.comment.username} commented: </div>
+          <div className="comment-username"><strong>{this.props.comment.username}</strong> commented: </div>
           <div className="comment-body">{this.props.comment.body}</div>
         </div>
         {this.deleteCommentButton()}
