@@ -3,7 +3,8 @@ import merge from 'lodash/merge';
 
 const _defaultPlayback ={
   play: false,
-  song: {}
+  song: {},
+  queue: []
 };
 
 const PlaybackReducer = (state = _defaultPlayback, action) => {

@@ -70,7 +70,7 @@ class App extends React.Component{
           {this.props.children}
         </main>
 
-        <footer className="playback-footer"><PlayerContainer /></footer>
+        <footer className="playback-footer"><PlayerContainer/></footer>
       </div>
   );
   }

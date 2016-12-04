@@ -6,18 +6,22 @@ class Player extends React.Component{
     super(props);
 
     this.state = {progress: 0, duration: 0};
+    this.update = this.update.bind(this);
   }
 
+  update(progress){
+    this.setState({played: progress.played})
+  }
 
 
   render(){
     return(
-      <div>
+      <div className="react-player">
+        <ReactPlayer url={this.props.song.url}
+          playing={this.props.play}></ReactPlayer>
       </div>
-    )
+    );
   }
 }
-// <ReactPlayer url={this.props.song.url}
-//   onProgress={this.update} />
 
 export default Player;

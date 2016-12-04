@@ -28,8 +28,13 @@ class SongDetail extends React.Component{
     this.setState({songModal: false, formType: "", body: "", user_id: null, song_id:null});
   }
 
-  togglePlay(){
-    //for playback
+  togglePlay(e){
+    e.stopPropagation();
+    if (this.props.song.url === this.props.currentSong.url) {
+      this.props.play ? this.props.pauseSong() : this.props.playSong(this.props.song);
+    }else {
+      this.props.playSong(this.props.song);
+    }
   }
 
   editandDeleteButtons() {
@@ -67,7 +72,7 @@ class SongDetail extends React.Component{
       return (
         <section className="song-detail-container">
           <div className="song-detail">
-            <img src={imgURL}/>
+            <img src={imgURL} onClick={this.togglePlay}/>
             <div className="song-detail-text-box">
               <span className="song-detail-text">{this.props.song.title} - {this.props.song.artist}</span>
               <span className="song-detail-text-user">Uploaded by: {this.props.song.user.username}</span>
