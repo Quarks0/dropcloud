@@ -12,7 +12,7 @@ class UserItem extends React.Component{
 
     return (
     <div className="song-item" onClick={handleClick(`/home/users/${this.props.user.id}`)}>
-      <img src={imageURL}/>
+      <img className="profile-img" src={imageURL}/>
       <div className="song-item-text-container">
         <span className="song-item-text">{this.props.user.username}</span>
         <span className="song-item-text-user">{this.props.user.description}</span>

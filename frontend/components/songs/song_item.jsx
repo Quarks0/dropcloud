@@ -20,12 +20,18 @@ class SongItem extends React.Component{
 
     return (
     <div className="song-item" onClick={handleClick(`/home/songs/${this.props.song.id}`)}>
-      <img src={imageURL} onClick={togglePlay}/>
+    <div className="underlay"><div className="play-button"><img className="album-art" src={imageURL} onClick={togglePlay}/></div></div>
+
       <div className="song-item-text-container">
-        <span className="song-item-text">
-          {this.props.song.title} - {this.props.song.artist}
-        </span>
-        <span className="song-item-text-user">Uploaded by: {this.props.song.user.username}</span>
+        <div className="song-item-detail-container">
+          <span className="song-item-text">
+            {this.props.song.title} - {this.props.song.artist}
+          </span>
+          <span className="song-item-text-user">Uploaded by: {this.props.song.user.username}</span>
+        </div>
+        <div className="waveform">
+      </div>
+
       </div>
     </div>
   );

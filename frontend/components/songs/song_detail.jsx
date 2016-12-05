@@ -72,7 +72,7 @@ class SongDetail extends React.Component{
       return (
         <section className="song-detail-container">
           <div className="song-detail">
-            <img src={imgURL} onClick={this.togglePlay}/>
+            <div className="underlay"><div className="play-button"><img className="album-art" src={imgURL} onClick={this.togglePlay}/></div></div>
             <div className="song-detail-text-box">
               <span className="song-detail-text">{this.props.song.title} - {this.props.song.artist}</span>
               <span className="song-detail-text-user">Uploaded by: {this.props.song.user.username}</span>
