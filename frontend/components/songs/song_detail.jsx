@@ -68,7 +68,7 @@ class SongDetail extends React.Component{
 
   breakfix(){
     if (this.props.song){
-      const imgURL = (this.props.song && this.props.song.image_url !== "") ? this.props.song.image_url : "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png";
+      const imgURL = (this.props.song && this.props.song.image_url !== "") ? this.props.song.image_url : "http://res.cloudinary.com/duhmzsirt/image/upload/v1480975823/note-white_lfmcpm.png";
       return (
         <section className="song-detail-container">
           <div className="song-detail">

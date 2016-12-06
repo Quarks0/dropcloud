@@ -458,11 +458,52 @@ button::-moz-focus-inner {
 }
 
 .album-art:hover{
-  opacity: .5;
+  opacity: .3;
 }
 
 .play-button{
   background-image: url(http://res.cloudinary.com/duhmzsirt/image/upload/v1480754195/1480644943_media-playback-start_cavlo3.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.playback-footer{
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+}
+
+.react-player{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-top: 1px solid black;
+  z-index: 1;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player-progress{
+  content: "";
+  background: #bfbfbf;
+  height: 5px;
+  width: 300px;
+}
+
+.audio-progress{
+  background: #ad42ff;
+  height: 100%;
+}
+
+.main{
+  padding-bottom: 50px;
 }

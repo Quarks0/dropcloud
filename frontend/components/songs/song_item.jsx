@@ -1,4 +1,3 @@
-//image url https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png
 import React from 'react';
 import {withRouter} from 'react-router';
 
@@ -8,7 +7,7 @@ class SongItem extends React.Component{
   }
 
   render(){
-    const imageURL = this.props.song.image_url === "" ? "https://res.cloudinary.com/duhmzsirt/image/upload/v1478652827/default_song_gpl8kw.png" : this.props.song.image_url;
+    const imageURL = this.props.song.image_url === "" ? "http://res.cloudinary.com/duhmzsirt/image/upload/v1480975823/note-white_lfmcpm.png" : this.props.song.image_url;
     const handleClick = url => e => this.props.router.push(url);
     const togglePlay = (e) => {
       e.stopPropagation();
@@ -29,9 +28,7 @@ class SongItem extends React.Component{
           </span>
           <span className="song-item-text-user">Uploaded by: {this.props.song.user.username}</span>
         </div>
-        <div className="waveform">
-      </div>
-
+        <div className="waveform"></div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import {PLAY_SONG, PAUSE_SONG} from '../actions/playback_actions';
+import {PLAY_SONG, PAUSE_SONG, CLEAR_SONG} from '../actions/playback_actions';
 import merge from 'lodash/merge';
 
 const _defaultPlayback ={
@@ -19,6 +19,8 @@ const PlaybackReducer = (state = _defaultPlayback, action) => {
       }
     case PAUSE_SONG:
       return merge(newState, {play: false});
+    case CLEAR_SONG:
+      return _defaultPlayback;
     default:
       return state;
   }
