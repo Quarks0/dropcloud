@@ -57,6 +57,7 @@ class Player extends React.Component{
   }
 
   render(){
+    const imgURL = (this.props.song && this.props.song.image_url !== "") ? this.props.song.image_url : "http://res.cloudinary.com/duhmzsirt/image/upload/v1480975823/note-white_lfmcpm.png";
     const playIcon = this.props.play ? "http://res.cloudinary.com/duhmzsirt/image/upload/v1480754195/1480644891_media-playback-pause_sphcem.png" : "http://res.cloudinary.com/duhmzsirt/image/upload/v1480754195/1480644943_media-playback-start_cavlo3.png"
     return(
       <div className="react-player" style={this.playerStatus()}>
@@ -76,9 +77,12 @@ class Player extends React.Component{
             onEnded={this.endSong}></ReactPlayer>
         </div>
         <div className="player-info">
+          <div className="player-album-art"><img src={imgURL}></img></div>
+          <div className="player-text-info">
+            <div>{this.props.song.title}</div>
+            <div>{this.props.song.artist}</div>
+          </div>
           <div>{this.formatTime(this.state.time)}/{this.formatTime(this.state.duration)}</div>
-          <div>{this.props.song.title}</div>
-          <div>{this.props.song.artist}</div>
         </div>
       </div>
     );
