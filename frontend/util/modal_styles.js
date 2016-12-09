@@ -13,7 +13,6 @@ export const loginModalStyle = {
    top             : '150px',
    width           : '300px',
    height          : '300px',
-   borderRadius    : '20px',
    padding         : 0,
    margin          : '0 auto',
    zIndex          : 51
